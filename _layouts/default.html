@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "fr-CH" }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.title }}</title>
+
+    <style media="screen">
+      body {
+        font-family: 'Open Sans', sans-serif;
+        height: 100vh;
+        margin: 0;
+        font-size: 2em;
+      }
+
+      a {
+        text-decoration: none;
+        font-style: italic;
+        color: black;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      .home {
+        height: 100vh;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>

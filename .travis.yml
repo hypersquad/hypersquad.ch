@@ -1,0 +1,23 @@
+language: ruby
+rvm:
+- 2.4.1
+script:
+- bundle exec jekyll build
+- bundle exec htmlproofer ./_site
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+sudo: false
+deploy:
+  provider: s3
+  access_key_id: AKIAIUD5IXOFZR6QZRCA
+  secret_access_key:
+    secure: Tyrw/hWS9HsbvseaU+fc5B4pG+EhsIr2+ey3NeTIOphLV9IvVKFUNa/8ifdiKF9ZwfYFlbGVKvFqbwgE8Kfl8pMVo0FyssDMUpIX0qgp34U9IPNK+hddG/ZFKyyvPB3u/kGyj2pT36ujyeQm1iXOjqmOgqZVN2YjitOAfBw2WtQNdc/pllkGDvmBm0FrjgntGcCtFmTFNcJCWCQW5E80dplqBWdC8pFomURZWkZYnFdS3qMYCS6NkIcfHqC79vCBVcu4TGq1ssxiQJriwQ7eSWcHuPd+hEgDg65pzzaQGpKitM3apw5ZoGVCMqXlqbBTePyLn9T1OdDz+1LJrrX3T8XNZVOCStV/UPDR1/ujLlFgj4LBWJj/lOcN6aM9Jd5nMx2RxUASCkWMFYu75XR0zQTYvXR1QAWKiFLDhXoxS16sNr0og8bCyrzZQRW3/6CP9WuzrH17GF8KLbF6NjOZEF05FRSjQ/w3oCUN3JGZfvytzzDSKXj3SsqSXHMUx7AUhzfNtQaOGgOikMhmnLe9P4EXLqdS7bjjcvTRIkFGSS0/swbJMLjC6fVYMGvza1Df33mYFQl0S5BFVgIPR9+xiWNaH55zr98AwJeDicQx8nQ3aF/7GVLVsObLYbpFifNpOOB0GW0JF4+BTFgFcFqVhRdEwbCOCGBZk4nijseoZyA=
+  bucket: hypersquad.ch
+  region: eu-west-1
+  skip_cleanup: true
+  local_dir: _site
+  acl: public_read
+  on:
+    repo: hypersquad/hypersquad.ch
+    branch: master
