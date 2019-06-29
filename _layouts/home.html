@@ -7,5 +7,19 @@ layout: default
 
   <p>{{ site.description }}</p>
 
-  <a href="mailto:{{ site.email}}">{{ site.email }}</a>
+  <a href="mailto:{{ site.email }}" class="contact-email">{{ site.email }}</a>
+
+  <div class="project-wrapper">
+    {% for project in site.data.projects %}
+      <a href="/projects/{{ project.slug }}" class="project">
+        <div>
+          <p>{{ project.name }}</p>
+          <p>{{ project.description }}</p>
+        </div>
+        <div>
+          <img src="{{ project.cover }}" alt="{{ project.slug }}">
+        </div>
+      </a>
+    {% endfor %}
+  </div>
 </div>

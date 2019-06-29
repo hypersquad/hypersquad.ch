@@ -8,14 +8,8 @@
       body {
         font-family: 'Open Sans', sans-serif;
         height: 100vh;
-        margin: 0;
-        font-size: 2em;
-      }
-
-      a {
-        text-decoration: none;
-        font-style: italic;
-        color: black;
+        margin: 1rem;
+        font-size: 20px;
       }
 
       h1 {
@@ -23,10 +17,43 @@
       }
 
       .home {
-        height: 100vh;
         display: flex;
         flex-flow: column;
         align-items: center;
+      }
+
+      .contact-email {
+        text-decoration: none;
+        font-style: italic;
+        color: black;
+      }
+
+      .project-wrapper {
+        margin-top: 8rem;
+        max-width: 1000px;
+      }
+
+      .project {
+        display: flex;
+        align-items: center;
+        flex-flow: row;
+      }
+
+      .project:not(:last-child) {
+        margin-bottom: 4rem;
+      }
+
+      .project {
+        text-decoration: none;
+        color: black;
+      }
+
+      .project * {
+        flex: 1 0 50%;
+      }
+
+      .project img {
+        max-width: 100%;
       }
     </style>
   </head>
